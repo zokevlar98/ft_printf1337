@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 01:59:00 by zqouri            #+#    #+#             */
-/*   Updated: 2023/11/19 14:12:58 by zqouri           ###   ########.fr       */
+/*   Updated: 2023/11/20 23:27:27 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static void	ft_next_char(char c, va_list args, int *size)
 {
-	if(!c)
-		return;
+	//if(!c)
+	//	return;
 	if (c == 'c')
 		ft_putchar(va_arg(args, int), size);
-	else if ( c == 's'){
-		//printf("[%c]\n",c);
+	else if ( c == 's')
+	{
 		ft_putstr(va_arg(args,char *),size);
 	}
 	else if (c == 'd')
@@ -27,17 +27,17 @@ static void	ft_next_char(char c, va_list args, int *size)
 	else if (c == 'i')
 		ft_putnbr(va_arg(args, int), size);
 	else if (c == 'u')
-		ft_putnbrpos(va_arg(args, int), size);
+		ft_putnbrpos(va_arg(args, unsigned int), size);
 	else if (c == 'p')
-		ft_putaddress(va_arg(args, void *), size);
+		ft_putaddress(va_arg(args,unsigned int *), size);
 	else if (c == 'x')
-		ft_puthex_low(va_arg(args, size_t), size);
+		ft_puthex_low(va_arg(args, unsigned int), size);
 	else if (c == 'X')
-		ft_puthex_upp(va_arg(args, size_t), size);
+		ft_puthex_upp(va_arg(args, unsigned int), size);
 	else if (c == '%')
 		ft_putchar('%', size);
-	else
-		ft_putchar(c, size);
+	//else
+	//	ft_putchar(c, size);
 }
 int	ft_printf(const char *s, ...)
 {
@@ -52,9 +52,11 @@ int	ft_printf(const char *s, ...)
 	va_start(args, s);
 	while (s[i])
 	{
-		if (s[i] == '%' && s[++i] != '\0')
+		if (s[i] == '%')
 		{
 			i++;
+			if (!s[i])
+				break;
 			ft_next_char(s[i], args, &size);
 		}
 		else
@@ -67,7 +69,10 @@ int	ft_printf(const char *s, ...)
 	return (size);
 }
 
-int main(void)
-{
-	printf("%d\n",ft_printf("%"));
-}
+//int main(void)
+//{
+//	//printf("%d\n",ft_printf("%"));
+//	//ft_printf("salam %s \n","test");
+//	//printf("%d\n",printf(" %u ", LONG_MAX));
+//	ft_printf(" %p ", LONG_MAX);
+//}

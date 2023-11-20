@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 02:43:29 by zqouri            #+#    #+#             */
-/*   Updated: 2023/11/19 10:23:32 by zqouri           ###   ########.fr       */
+/*   Updated: 2023/11/20 19:15:08 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 void	ft_putnbr(int num, int *size)
 {
 	if (num == -2147483648)
-		ft_putstr("-2147483648",size);
-	if (num < 0)
+	{
+		ft_putchar('-', size);
+		ft_putstr("2147483648",size);
+	}
+	else if (num < 0)
 	{
 		ft_putchar('-',size);
 		num = num * (-1);

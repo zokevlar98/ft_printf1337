@@ -6,13 +6,27 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 09:22:37 by zqouri            #+#    #+#             */
-/*   Updated: 2023/11/19 11:54:37 by zqouri           ###   ########.fr       */
+/*   Updated: 2023/11/20 23:26:23 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putaddress(void *p, int *size)
+void	ft_puthex(size_t nbr , int *size)
+{
+	char	*p;
+
+	p = "0123456789abcdef";
+	if (nbr < 16)
+		ft_putchar(p[nbr], size);
+	else 
+	{
+		ft_puthex(nbr / 16, size);
+		ft_putchar(p[nbr % 16], size);
+	}
+}
+
+void	ft_putaddress(unsigned int*p, int *size)
 {
 	
 	if (p == NULL)
@@ -20,6 +34,6 @@ void	ft_putaddress(void *p, int *size)
 	else
 	{
 		ft_putstr("0x",size);
-		ft_puthex_low((size_t)p , size);
+		ft_puthex((size_t)p , size);
 	}
 }
