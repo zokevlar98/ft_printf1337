@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 01:59:00 by zqouri            #+#    #+#             */
-/*   Updated: 2023/11/20 23:47:05 by zqouri           ###   ########.fr       */
+/*   Updated: 2023/11/20 23:53:24 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,3 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (size);
 }
-
-//int main(void)
-//{
-//	//printf("%d\n",ft_printf("%"));
-//	//ft_printf("salam %s \n","test");
-//	//printf("%d\n",printf(" %u ", LONG_MAX));
-//	ft_printf(" %p ", LONG_MAX);
-//}
