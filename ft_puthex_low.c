@@ -6,13 +6,13 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 09:31:04 by zqouri            #+#    #+#             */
-/*   Updated: 2023/11/20 22:56:20 by zqouri           ###   ########.fr       */
+/*   Updated: 2023/11/20 23:38:52 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthex_low(unsigned int nbr , int *size)
+void	ft_puthex_low(unsigned int nbr, int *size)
 {
 	char	*p;
 

@@ -6,7 +6,7 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 02:43:31 by zqouri            #+#    #+#             */
-/*   Updated: 2023/11/20 04:53:31 by zqouri           ###   ########.fr       */
+/*   Updated: 2023/11/20 23:41:39 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 void	ft_putstr(char *s, int *size)
 {
 	int	i;
-	
+
 	if (!s)
-	{
 		s = "(null)";
-		//ft_putstr("(null)", size);
-	}
 	i = 0;
 	while (s[i])
 	{

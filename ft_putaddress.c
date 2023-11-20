@@ -6,13 +6,13 @@
 /*   By: zqouri <zqouri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 09:22:37 by zqouri            #+#    #+#             */
-/*   Updated: 2023/11/20 23:26:23 by zqouri           ###   ########.fr       */
+/*   Updated: 2023/11/20 23:37:49 by zqouri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthex(size_t nbr , int *size)
+static void	ft_puthex(size_t nbr, int *size)
 {
 	char	*p;
 
@@ -28,12 +28,11 @@ void	ft_puthex(size_t nbr , int *size)
 
 void	ft_putaddress(unsigned int*p, int *size)
 {
-	
 	if (p == NULL)
-		ft_putstr("0x0",size);
+		ft_putstr("0x0", size);
 	else
 	{
-		ft_putstr("0x",size);
-		ft_puthex((size_t)p , size);
+		ft_putstr("0x", size);
+		ft_puthex((size_t)p, size);
 	}
 }
